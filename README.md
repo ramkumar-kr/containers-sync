@@ -4,6 +4,21 @@ This is a webextension which would sync firefox containers across multiple devic
 
 ---
 
+## Steps to build locally
+
+* Install webpack (`npm install -g webpack`)
+* Clone the repository (`git clone git@github.com:ramkumar-kr/containers-sync.git`)
+* Run npm install in the containers-sync directory to install all dependencies (`npm install`)
+* Run `webpack` to generate the `dist` directory
+
+### Testing the extension
+* Run `npm run watch` to start webpack to generate the dist directory
+* Run `npm run firefox` to load the extension to firefox  with a temporary profile
+
+### Building for production
+* Run `npm run production`
+* Upload the zip file in the web-ext-artiacts directory to the addon store
+
 ## FAQ
 
 -  **What does this extension do?**
