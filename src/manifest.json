@@ -1,0 +1,30 @@
+{
+  "description": "Sync containers across multiple devices",
+  "manifest_version": 2,
+  "name": "Containers Sync",
+  "version": "1.0.0",
+  "permissions": [
+    "alarms",
+    "contextualIdentities",
+    "storage"
+  ],
+  "icons": {
+    "48": "./resources/icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "applications": {
+    "gecko": {
+      "id": "sync@containers",
+      "strict_min_version": "55.0"
+    }
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "browser_style": true,
+    "default_icon": "./resources/icon.png"
+  }
+}
