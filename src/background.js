@@ -16,14 +16,6 @@ var restore = function () {
   })
 }
 
-var reset = function () {
-  browser.contextualIdentities.query({}).then((containers) => {
-    containers.map((container) => {
-      browser.contextualIdentities.remove(container.cookieStoreId)
-    });
-  });
-}
-
 var handleInstall = function (details) {
   if(details.reason == "install"){
     restore();
@@ -37,9 +29,6 @@ var handleUserAction = function (data) {
       break;
     case "restore":
       restore();
-      break;
-    case "reset":
-      reset();
       break;
     default:
       break;

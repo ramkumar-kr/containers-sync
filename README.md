@@ -35,10 +35,6 @@ This is a webextension which would sync firefox containers across multiple devic
 
     Yes. You can use the popup to backup or restore manually
 
-- **What does the reset button in the popup do?**
-
-    It will remove all containers from your device and also from the sync storage
-
 -  **I have set a preference to open a website in a particular container. Will that also be synced?**
     No. This data is not available to any extensions by the API.
 
