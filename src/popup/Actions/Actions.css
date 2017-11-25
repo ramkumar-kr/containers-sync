@@ -1,0 +1,28 @@
+.ActionItem{
+  display: grid;
+  grid-auto-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.Body{
+  min-width: 200px;
+  min-height: 60px;
+}
+
+
+.BackupBtn{
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.RestoreBtn{
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.SidebarBtn{
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+

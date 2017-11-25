@@ -1,8 +1,7 @@
-
 var backup = function () {
   browser.contextualIdentities.query({}).then((containers) => {
     var identities = containers.map((container) => {
-      return { name: container.name, color: container.color, icon: container.icon }
+      return { name: container.name, color: container.color, icon: container.icon, colorCode: container.colorCode }
     });
     browser.storage.sync.set({ identities: identities });
   });
@@ -11,7 +10,11 @@ var backup = function () {
 var restore = function () {
   browser.storage.sync.get().then((data) => {
     data.identities.map((identity) => {
-      browser.contextualIdentities.create(identity);
+      browser.contextualIdentities.query({name: identity.name}).then((result) => {
+        if(result.length === 0){
+          browser.contextualIdentities.create(identity);
+        }
+      })
     });
   })
 }
@@ -19,6 +22,7 @@ var restore = function () {
 var handleInstall = function (details) {
   if(details.reason == "install"){
     restore();
+    backup();
   }
 }
 
@@ -33,6 +37,7 @@ var handleUserAction = function (data) {
     default:
       break;
   }
+  return data;
 }
 
 // Run when installed

@@ -2,7 +2,7 @@
   "description": "Sync containers across multiple devices",
   "manifest_version": 2,
   "name": "Containers Sync",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "permissions": [
     "alarms",
     "contextualIdentities",
@@ -25,6 +25,10 @@
   "browser_action": {
     "default_popup": "popup.html",
     "browser_style": true,
+    "default_icon": "./resources/icon.png"
+  },
+  "sidebar_action": {
+    "default_panel": "sidebar.html",
     "default_icon": "./resources/icon.png"
   }
 }

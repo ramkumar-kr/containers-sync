@@ -1,0 +1,15 @@
+.logo{
+  vertical-align: middle;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+}
+
+.row{
+  border-bottom: 1px solid var(--grey-40);
+
+}
+
+.title{
+  vertical-align: middle;
+}

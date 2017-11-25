@@ -1,11 +1,7 @@
-var backup = function () {
-  browser.runtime.sendMessage({ type: "backup" })
-}
+import 'photon-colors/colors.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css'
 
-var restore = function () {
-  browser.runtime.sendMessage({ type: "restore" })
-}
-
-
-document.getElementById('backup').addEventListener("click", backup);
-document.getElementById('restore').addEventListener("click", restore);
+ReactDOM.render(<App />, document.getElementById('root'));

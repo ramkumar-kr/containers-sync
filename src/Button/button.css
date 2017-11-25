@@ -1,0 +1,21 @@
+button {
+  background-color: var(--blue-60);
+  border-radius: 2px;
+  color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 13px;
+  min-width: 132px;
+  width: auto;
+  border: none;
+  height: 32px;
+  text-align: center;
+}
+
+button:active{
+  background-color: var(--blue-80);
+}
+
+button:hover{
+  background-color: var(--blue-70);
+}

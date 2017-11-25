@@ -1,0 +1,12 @@
+.wrapper{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.icon{
+  margin: auto;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  padding: 1px; 
+}
