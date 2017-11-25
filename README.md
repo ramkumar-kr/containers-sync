@@ -2,6 +2,8 @@
 
 This is a webextension which would sync firefox containers across multiple devices.
 
+[![Get-the-addon-button](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/containers-sync/)
+
 ---
 
 ## Steps to build locally
@@ -36,6 +38,7 @@ This is a webextension which would sync firefox containers across multiple devic
     Yes. You can use the popup to backup or restore manually
 
 -  **I have set a preference to open a website in a particular container. Will that also be synced?**
+    
     No. This data is not available to any extensions by the API.
 
 - **Will this extension work with firefox for android?**
