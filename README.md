@@ -31,6 +31,10 @@ This is a webextension which would sync firefox containers across multiple devic
 
   - As soon as you create/update/remove a container or multiple containers
   - Whenever the backup button is clicked in the popup
+  
+- **Is it possible to view the list of synced containers?**
+    
+    Yes. You can view the list of synced containers by clicking on the "View synced containers" button or from the sidebar.
 
 
 - **Can I backup/restore them manually?**
