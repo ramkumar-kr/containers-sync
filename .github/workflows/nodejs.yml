@@ -12,17 +12,16 @@ jobs:
         node-version: [10.16.1]
 
     steps:
-    
-    - name: upload source code
-      uses: actions/upload-artifact@master
-      with:
-        name: upload source code
-        path: .
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: upload source code
+      uses: actions/upload-artifact@master
+      with:
+        name: source-code
+        path: ./
     - name: npm install and build webext
       run: |
         npm install
@@ -32,5 +31,5 @@ jobs:
     - name: upload built artifacts
       uses: actions/upload-artifact@master
       with:
-        name: upload built artifacts
+        name: web-ext-artifact
         path: ./web-ext-artifacts
