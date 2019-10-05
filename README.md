@@ -6,18 +6,20 @@ This is a webextension which would sync firefox containers across multiple devic
 
 ---
 
-## Steps to build locally
+## Steps to build
 
-* Install webpack (`npm install -g webpack`)
+* Use node 10.16.1 and npm 6.11.3 only
 * Clone the repository (`git clone git@github.com:ramkumar-kr/containers-sync.git`)
 * Run npm install in the containers-sync directory to install all dependencies (`npm install`)
 * Run `webpack` to generate the `dist` directory
+* You can use [github actions file](./.github/workflows/nodejs.yml) as a reference for an automated script
 
 ### Testing the extension
 * Run `npm run watch` to start webpack to generate the dist directory
 * Run `npm run firefox` to load the extension to firefox  with a temporary profile
 
 ### Building for production
+* Use ubuntu 18.04 LTS only
 * Run `npm run production`
 * Upload the zip file in the web-ext-artiacts directory to the addon store
 
