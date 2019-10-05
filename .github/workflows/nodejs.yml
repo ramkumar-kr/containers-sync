@@ -1,0 +1,36 @@
+name: Automated builder of webextension packages
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [10.16.1]
+
+    steps:
+    
+    - name: upload source code
+      uses: actions/upload-artifact@master
+      with:
+        name: upload source code
+        path: .
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install and build webext
+      run: |
+        npm install
+        npm run production
+      env:
+        CI: true
+    - name: upload built artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: upload built artifacts
+        path: ./web-ext-artifacts
