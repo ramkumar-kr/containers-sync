@@ -6,6 +6,7 @@ class SidebarApp extends Component {
   refreshWindow(){
     window.location.reload();
   }
+
   render() {
     return (
       <div style={{textAlign: "center"}}>

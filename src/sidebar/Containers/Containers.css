@@ -10,6 +10,17 @@ table{
   width: 100%;
 }
 
+.preference{
+  display: block;
+  grid-area: 0/0/1/1;
+  text-align: center;
+  width: 100%;
+}
+
+.pref-text{
+  width: 90%;
+}
+
 tr:last-child{
   border-bottom: none;
 }
