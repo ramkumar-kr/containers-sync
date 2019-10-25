@@ -46,7 +46,7 @@ class Actions extends Component {
     return (<div className="ActionItem">
       <Button className="BackupBtn" onClick={this.backup}>Backup</Button>
       <Button className="RestoreBtn" onClick={this.restore}>Restore</Button>
-      <Button className="SidebarBtn" onClick={this.openSidebar}>View Synced Containers</Button>
+      <Button className="SidebarBtn" onClick={this.openSidebar}>View Preferences and Synced Containers</Button>
     </div>)
   }
 

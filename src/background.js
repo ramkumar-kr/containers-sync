@@ -1,17 +1,25 @@
 var backup = function () {
+  browser.storage.sync.get().then((data) => {
   browser.contextualIdentities.query({}).then((containers) => {
     var identities = containers.map((container) => {
       return { name: container.name, color: container.color, icon: container.icon, colorCode: container.colorCode }
     });
-    identities = filter(identities)
-    browser.storage.sync.set({ identities: identities });
+    if (data.regex == undefined) {
+      data.regex = ".^" // Do not filter anything
+    }
+    identities = filter(identities,data.regex)
+    browser.storage.sync.set({ identities: identities, regex: data.regex });
+  });
   });
 }
 
 var restore = function () {
   browser.storage.sync.get().then((data) => {
     if(data.identities){
-      data.identities = filter(data.identities)
+      if (data.regex == undefined) {
+        data.regex = ".^" // Do not filter anything
+      }
+      data.identities = filter(data.identities, data.regex)
     }
     data.identities.map((identity) => {
       browser.contextualIdentities.query({name: identity.name}).then((result) => {
@@ -23,10 +31,10 @@ var restore = function () {
   })
 }
 
-var filter = function (identities) {
+var filter = function (identities, regex) {
   var identityGroups = {}
   identities.map((identity) => {
-    var nameMatch = identity.name.match(/^([a-zA-Z-_]+)\d$/)
+    var nameMatch = identity.name.match(new RegExp(regex))
     if(nameMatch){
       var stem = nameMatch[1]
       if(!(stem in identityGroups)){
