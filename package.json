@@ -1,6 +1,6 @@
 {
   "name": "containers-sync",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
