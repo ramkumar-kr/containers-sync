@@ -53,7 +53,7 @@ var filter = function (identities, regex) {
   return filtered
 }
 
-var handleInstall = async function (details) {
+var handleInstall = function (details) {
   if(details.reason == "install"){
     restore();
     backup();
