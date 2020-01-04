@@ -24,7 +24,7 @@ var restore = function () {
     data.identities.map((identity) => {
       browser.contextualIdentities.query({name: identity.name}).then((result) => {
         if(result.length === 0){
-          browser.contextualIdentities.create(identity);
+          browser.contextualIdentities.create({name: identity.name, color: identity.color, icon: identity.icon});
         }
       })
     });
